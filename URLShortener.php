@@ -18,7 +18,7 @@
                 return "www.streamline.com/".$shortURL;
             }
             public function directURL(string $shortURL){
-                //Loop that looks up the new Long URL based on the key gained for the short URL
+                //Convert the code into base 10 to find the ID
                 $tableID = base_convert($shortURL, 36, 10);
                 //Gets the Long URL based on the number, O(1)
                 global $URLTable;
