@@ -36,6 +36,7 @@
                 }
                 //Gets the Long URL based on the number, O(1)
                 global $URLTable;
+                //Increments Click Count
                 $URLTable[1982-$tableID]['click_count'] = $URLTable[1982-$tableID]['click_count']+1;
                 return $URLTable[1982-$tableID]['original_url'];
                 
@@ -50,6 +51,7 @@
                     $tableID = $tempID;
                     $loopCount--;
                 }
+                //Finds the URL's click count
                 global $URLTable;
                 return $URLTable[1982-$tableID]['click_count'];
             }
@@ -61,6 +63,7 @@
         //GET /<short_url>: Redirects to the original long URL.
         echo $myURLEncoder->directURL("2j");
         echo "\n";
+        //GET /analytics/<short_url>: Returns analytics data for the short URL.
         echo $myURLEncoder->getClickCount("2j");
 
 
