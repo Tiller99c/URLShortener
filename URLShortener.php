@@ -11,11 +11,9 @@
                 //Pulls the Table of the saved URL then gets the next available position
                 global $URLTable;
                 $tableID = count($URLTable) + 1982;
-                $savedID = $tableID;
-                $shortURL = "";
-                $shortURL = $shortURL. base_convert($tableID, 10, 36);
+                $shortURL = base_convert($tableID, 10, 36);
                 //Inserts the new URL into the URL Table, then returns the shorten URL
-                $URLInsert = ["ID"=> $savedID, "original_url"=> $originURL, "short_url"=> "www.streamline.com/".$shortURL, "created_at"=> "07-15-2026", "click_count"=>0];
+                $URLInsert = ["ID"=> $tableID, "original_url"=> $originURL, "short_url"=> "www.streamline.com/".$shortURL, "created_at"=> "07-15-2026", "click_count"=>0];
                 $URLTable[] = $URLInsert;
                 return "www.streamline.com/".$shortURL;
             }
